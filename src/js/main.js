@@ -10,9 +10,9 @@ window.addEventListener('DOMContentLoaded', () => {
         cardMonth = document.querySelector('#cardMonth'),
         cardMonthOptions = document.querySelectorAll('#cardMonth option'),
         CVV = document.querySelector('#CVV'),
-        cardTypeImg = document.querySelector('.card-typeImg');
+        cardTypeImgs = document.querySelectorAll('.card-type__img');
 
-    const numberLabel = document.querySelectorAll('.card-number__numberItem'),
+    const numberLabel = document.querySelectorAll('.number-item'),
         nameLabel = document.querySelector('.card-name__holder'),
         yearLabel = document.querySelector('label[for = "cardYear"]'),
         monthLabel = document.querySelectorAll('label[for = "cardMonth"]')[1];
@@ -51,9 +51,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function setCardTypeImg(cardType = "visa")
     {
-        cardTypeImg.src = `img/cardTypes/${cardType}.png`;
-        cardTypeImg.alt = `${cardType}`;
-    }
+        cardTypeImgs.forEach(cardTypeImg => {
+            cardTypeImg.src = `img/cardTypes/${cardType}.png`;
+            cardTypeImg.alt = `${cardType}`;
+        });
+    };
 
     let cardType = getCardType();
     setCardTypeImg(cardType);
@@ -80,12 +82,12 @@ window.addEventListener('DOMContentLoaded', () => {
             numberLabel.forEach((sym, i) => {
                 if (i != 4 && i != 11 && i < 16) 
                 {
-                    sym.classList.remove('active');
+                    sym.classList.remove('number-item--active');
                     sym.textContent = '#';
                 }
                 else 
                 {
-                    sym.classList.add('active');
+                    sym.classList.add('number-item--active');
                     sym.textContent = ' ';
                 }
             });
@@ -95,25 +97,25 @@ window.addEventListener('DOMContentLoaded', () => {
             numberLabel.forEach((sym, i) => {
                 if (i != 4 && i != 9 && i != 14) 
                 {
-                    sym.classList.remove('active');
+                    sym.classList.remove('number-item--active');
                     sym.textContent = '#';
                 }
                 else 
                 {
-                    sym.classList.add('active');
+                    sym.classList.add('number-item--active');
                     sym.textContent = ' ';
                 }
             });
         }
 
         for (let i = 0; i < 19; i++) {
-            if (!numberLabel[i].classList.contains('active') && cardNumber.value[i]) {
+            if (!numberLabel[i].classList.contains('number-item--active') && cardNumber.value[i]) {
                 if (i < 4 || i > cardNumberMask.mask.length - 5) {
                     numberLabel[i].textContent = cardNumber.value[i];
                 }
                 else numberLabel[i].textContent = '*';
             }
-            else if (!numberLabel[i].classList.contains('active')) {
+            else if (!numberLabel[i].classList.contains('number-item--active')) {
                 numberLabel[i].textContent = '#';
             }
         }
@@ -143,17 +145,17 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     CVV.addEventListener('focus', () => {
-        cardFigure.classList.add('active');
+        cardFigure.classList.add('card-figure--active');
     });
     CVV.addEventListener('blur', () => {
-        cardFigure.classList.remove('active');
+        cardFigure.classList.remove('card-figure--active');
     });
     CVV.addEventListener('input', () => {
-        document.querySelector('.card-cvv__band').innerHTML = '';
+        document.querySelector('.cvv__band').innerHTML = '';
         for (let i = 0; i< CVV.value.length; i++) {
             let span = document.createElement('span');
             span.textContent = '*';
-            document.querySelector('.card-cvv__band').appendChild(span);
+            document.querySelector('.cvv__band').appendChild(span);
         }
     });
 });

@@ -6,78 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CardForm</title>
 </head>
-<body>
-    <div class="wrapper">
+<body class = "body">
+    <div class="body__wrapper">
         <form class="card-form card-form__block">
             <div class="card-figure card-figure__block">
-                <div class="card-side front">
+                <div class="card-side card-side__front">
                     <div class="card-side__cover">
-                        <img class = "coverImg" src="img/cardBackgrounds/background.jpg" alt="">
+                        <img class = "card-side__img" src="img/cardBackgrounds/background.jpg" alt="">
                     </div>
                     <div class="front__wrapper">
                         <div class="front__top">
-                            <img class = "front-chip" src="img/chip.png" alt="">
-                            <div class="card-type">
-                                <img class = "card-typeImg" src="img/cardTypes/visa.png" alt="visa">
+                            <img class = "front__chip" src="img/chip.png" alt="">
+                            <div class="card-type card-type__block">
+                                <img class = "card-type__img" src="img/cardTypes/visa.png" alt="visa">
                             </div>
                         </div>
                         <div class="card-number front__middle">
                             <label class = "card-number__row" for="cardNumber">
                                 <span>
-                                    <div class="card-number__numberItem">#</div>
+                                    <div class="number-item">#</div>
                                 </span><span>
-                                    <div class="card-number__numberItem">#</div>
+                                    <div class="number-item">#</div>
                                 </span>
                                 <span>
-                                    <div class="card-number__numberItem">#</div>
+                                    <div class="number-item">#</div>
                                 </span>
                                 <span>
-                                    <div class="card-number__numberItem">#</div>
+                                    <div class="number-item">#</div>
                                 </span>
                                 <span>
-                                    <div class="card-number__numberItem active"></div>
+                                    <div class="number-item number-item--active"></div>
                                 </span>
                                 <span>
-                                    <div class="card-number__numberItem">#</div>
+                                    <div class="number-item">#</div>
                                 </span>
                                 <span>
-                                    <div class="card-number__numberItem">#</div>
+                                    <div class="number-item">#</div>
                                 </span>
                                 <span>
-                                    <div class="card-number__numberItem">#</div>
+                                    <div class="number-item">#</div>
                                 </span>
                                 <span>
-                                    <div class="card-number__numberItem">#</div>
+                                    <div class="number-item">#</div>
                                 </span>
                                 <span>
-                                    <div class="card-number__numberItem active"></div>
+                                    <div class="number-item number-item--active"></div>
                                 </span>
                                 <span>
-                                    <div class="card-number__numberItem">#</div>
+                                    <div class="number-item">#</div>
                                 </span>
                                 <span>
-                                    <div class="card-number__numberItem">#</div>
+                                    <div class="number-item">#</div>
                                 </span>
                                 <span>
-                                    <div class="card-number__numberItem">#</div>
+                                    <div class="number-item">#</div>
                                 </span>
                                 <span>
-                                    <div class="card-number__numberItem">#</div>
+                                    <div class="number-item">#</div>
                                 </span>
                                 <span>
-                                    <div class="card-number__numberItem active"></div>
+                                    <div class="number-item number-item--active"></div>
                                 </span>
                                 <span>
-                                    <div class="card-number__numberItem">#</div>
+                                    <div class="number-item">#</div>
                                 </span>
                                 <span>
-                                    <div class="card-number__numberItem">#</div>
+                                    <div class="number-item">#</div>
                                 </span>
                                 <span>
-                                    <div class="card-number__numberItem">#</div>
+                                    <div class="number-item">#</div>
                                 </span>
                                 <span>
-                                    <div class="card-number__numberItem">#</div>
+                                    <div class="number-item">#</div>
                                 </span>
                             </label>
                         </div>
@@ -86,7 +86,7 @@
                                 <div class="card-name__title">Card Holder</div>
                                 <div class="card-name__holder">FULL NAME</div>
                             </label>
-                            <div class="card-date">
+                            <div class="card-date card-date__block">
                                 <label class = "card-date__title" for="cardMonth">
                                     Expires
                                 </label>
@@ -97,20 +97,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-side back">
+                <div class="card-side card-side__back">
                     <div class="card-side__cover">
-                        <img class = "coverImg" src="img/cardBackgrounds/background.jpg" alt="">
+                        <img class = "card-side__img" src="img/cardBackgrounds/background.jpg" alt="">
                     </div>
-                    <div class="card-band">
+                    <div class="back__band">
                     </div>
-                    <div class="card-cvv">
-                        <div class="card-cvv__title">
+                    <div class="back__cvv">
+                        <div class="cvv__title">
                             CVV
                         </div>
-                        <label class = "card-cvv__band" for="CVV">
+                        <label class = "cvv__band" for="CVV">
                         </label>
-                        <div class="card-type">
-                            <img class = "card-typeImg" src="img/cardTypes/visa.png" alt="visa">
+                        <div class="card-type card-type__block">
+                            <img class = "card-type__img" src="img/cardTypes/visa.png" alt="visa">
                         </div>
                     </div>
                 </div>
@@ -127,7 +127,7 @@
                 <div class="card-form__row">
                     <div class="left">
                         <label for="cardMonth" class="card-input__title">Expiration Date</label>
-                        <select id="cardMonth" class = "card-input__field">
+                        <select id="cardMonth" class = "card-input__field left__select">
                             <option disabled = "disabled" selected = "selected" value="">Month</option>
                             <option value="01">01</option>
                             <option value="02">02</option>
@@ -142,7 +142,7 @@
                             <option value="11">11</option>
                             <option value="12">12</option>
                         </select>
-                        <select id="cardYear" class = "card-input__field">
+                        <select id="cardYear" class = "card-input__field left__select">
                             <option disabled = "disabled" selected = "selected" value="">Year</option>
                             <option value="21">2021</option>
                             <option value="22">2022</option>
@@ -157,7 +157,7 @@
                         <input id = "CVV" class = "card-input__field" type="text">
                     </div>
                 </div>
-                <button class="card-form__button">
+                <button class="button card-form__button">
                     Submit
                 </button>
             </div>
