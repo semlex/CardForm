@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 
 .body {
-    background: url('../img/756501.png');
+    background: #def2ff;
     background-position: center 70%;
     background-repeat: no-repeat;
     &__wrapper {
@@ -26,6 +26,7 @@
     }
     &__row {
         display:flex;
+        flex-flow: row wrap;
     }
     &__button {
         width:100%;
@@ -110,6 +111,9 @@
     &__middle {
         margin:35px 0;
         padding: 10px 15px;
+        @media screen and (max-width: 400px) {
+            margin:25px 0;
+        }
     }
     &__bottom {
         display:flex;
@@ -166,6 +170,18 @@
     width:16px;
     &--active {
         width:30px;
+    }
+    @media screen and (max-width: 400px) {
+        font-size: 24px;
+        &--active {
+            width:15px;
+        }
+    }
+    @media screen and (max-width: 350px) {
+        font-size: 20px;
+        &--active {
+            width:8px;
+        }
     }
 }
 .card-name {
@@ -280,10 +296,19 @@
         background-position: 90% center!important;
         background-repeat: no-repeat!important;
         background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAeCAYAAABuUU38AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAUxJREFUeNrM1sEJwkAQBdCsngXPHsQO9O5FS7AAMVYgdqAd2IGCDWgFnryLFQiCZ8EGnJUNimiyM/tnk4HNEAg/8y6ZmMRVqz9eUJvRaSbvutCZ347bXVJy/ZnvTmdJ862Me+hAbZCTs6GHpyUi1tTSvPnqTpoWZPUa7W7ncT3vK4h4zVejy8QzM3WhVUO8ykI6jOxoGA4ig3BLHcNFSCGqGAkig2yqgpEiMsjSfY9LxYQg7L6r0X6wS29YJiYQYecemY+wHrXD1+bklGhpAhBDeu/JfIVGxaAQ9sb8CI+CQSJ+QmJg0Ii/EE2MBiIXooHRQhRCkBhNhBcEhLkwf05ZCG8ICCOpk0MULmvDSY2M8UawIRExLIQIEgHDRoghihgRIgiigBEjgiFATBACAgFgghEwSAAGgoBCBBgYAg5hYKAIFYgHBo6w9RRgAFfy160QuV8NAAAAAElFTkSuQmCC");
+        @media screen and (max-width: 485px) {
+            &:last-child {
+                margin-right:0px;
+            }
+        }
     }
 }
 .right {
     flex-basis:25%;
+    @media screen and (max-width: 485px) {
+        flex-basis:100%;
+        margin-top: 20px;
+    }
 }
 .button {
     padding: 15px 0;
