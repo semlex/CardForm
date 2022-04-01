@@ -28,9 +28,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function getCardType(value = '4') 
     {
+        
         if (value.match(/^(34|37)/) !== null)
         {
             return "amex";
+        }
+        else if (value.match(/^2/) !== null) {
+            return "mir";
         }
         else if (value.match(/^5[1-5]/) !== null) {
             return "mastercard";
@@ -52,22 +56,25 @@ window.addEventListener('DOMContentLoaded', () => {
         cardTypeImgs.forEach(cardTypeImg => {
             switch(cardType) {
                 case "visa":
-                    cardTypeImg.src = 'https://firebasestorage.googleapis.com/v0/b/cardform-f357b.appspot.com/o/visa.png?alt=media&token=5a3bbe1a-dfdd-44a3-9427-56072ba2aa0b';
+                    cardTypeImg.src = "https://firebasestorage.googleapis.com/v0/b/cardform-f357b.appspot.com/o/visa.png?alt=media&token=5a3bbe1a-dfdd-44a3-9427-56072ba2aa0b";
                     break;
                 case "mastercard":
-                    cartTypeImg.src = 'https://firebasestorage.googleapis.com/v0/b/cardform-f357b.appspot.com/o/mastercard.png?alt=media&token=0bd9be02-92d0-419e-a5ad-69951f36abfd';
+                    cardTypeImg.src = "https://firebasestorage.googleapis.com/v0/b/cardform-f357b.appspot.com/o/mastercard.png?alt=media&token=0bd9be02-92d0-419e-a5ad-69951f36abfd";
+                    break;
+                case "mir":
+                    cardTypeImg.src = "https://firebasestorage.googleapis.com/v0/b/cardform-f357b.appspot.com/o/800px-Mir-logo.SVG.svg.png?alt=media&token=5fcbfcdd-170e-43b7-a774-a9c929ee237f";
                     break;
                 case "amex":
-                    cardTypeImg.src = 'https://firebasestorage.googleapis.com/v0/b/cardform-f357b.appspot.com/o/amex.png?alt=media&token=2eac4496-5173-42c2-9c1c-7a6d5df3023f';
+                    cardTypeImg.src = "https://firebasestorage.googleapis.com/v0/b/cardform-f357b.appspot.com/o/amex.png?alt=media&token=2eac4496-5173-42c2-9c1c-7a6d5df3023f";
                     break;
                 case "discover":
-                    cartTypeImg.src = 'https://firebasestorage.googleapis.com/v0/b/cardform-f357b.appspot.com/o/discover.png?alt=media&token=f18f4d49-739b-462c-808e-6ba292351dfd';
+                    cardTypeImg.src = "https://firebasestorage.googleapis.com/v0/b/cardform-f357b.appspot.com/o/discover.png?alt=media&token=f18f4d49-739b-462c-808e-6ba292351dfd";
                     break;
                 case "troy":
-                    cartTypeImg.src = 'https://firebasestorage.googleapis.com/v0/b/cardform-f357b.appspot.com/o/troy.png?alt=media&token=b28b4ccd-c4e2-4bcd-b83b-e2914cb9e18c';
+                    cardTypeImg.src = "https://firebasestorage.googleapis.com/v0/b/cardform-f357b.appspot.com/o/troy.png?alt=media&token=b28b4ccd-c4e2-4bcd-b83b-e2914cb9e18c";
                     break;
                 default:
-                    cardTypeImg.src = 'https://firebasestorage.googleapis.com/v0/b/cardform-f357b.appspot.com/o/visa.png?alt=media&token=5a3bbe1a-dfdd-44a3-9427-56072ba2aa0b';
+                    cardTypeImg.src = "https://firebasestorage.googleapis.com/v0/b/cardform-f357b.appspot.com/o/visa.png?alt=media&token=5a3bbe1a-dfdd-44a3-9427-56072ba2aa0b";
                     break;
             }
 
