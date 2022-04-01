@@ -62,7 +62,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     cardTypeImg.src = "https://firebasestorage.googleapis.com/v0/b/cardform-f357b.appspot.com/o/mastercard.png?alt=media&token=0bd9be02-92d0-419e-a5ad-69951f36abfd";
                     break;
                 case "mir":
-                    cardTypeImg.src = "https://firebasestorage.googleapis.com/v0/b/cardform-f357b.appspot.com/o/800px-Mir-logo.SVG.svg.png?alt=media&token=5fcbfcdd-170e-43b7-a774-a9c929ee237f";
+                    cardTypeImg.src = "https://firebasestorage.googleapis.com/v0/b/cardform-f357b.appspot.com/o/800px-Mir-logo.SVG.svg.png?alt=media&token=566d7b06-23b4-438f-bcfc-61aee1f43bce";
                     break;
                 case "amex":
                     cardTypeImg.src = "https://firebasestorage.googleapis.com/v0/b/cardform-f357b.appspot.com/o/amex.png?alt=media&token=2eac4496-5173-42c2-9c1c-7a6d5df3023f";
