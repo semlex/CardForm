@@ -5,9 +5,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const cardFigure = document.querySelector('.card-figure'),
         cardNumber = document.querySelector('#cardNumber'),
         cardName = document.querySelector('#cardName'),
-        cardYear = document.querySelector('#cardYear'),
         cardYearOptions = document.querySelectorAll('#cardYear option'),
-        cardMonth = document.querySelector('#cardMonth'),
         cardMonthOptions = document.querySelectorAll('#cardMonth option'),
         CVV = document.querySelector('#CVV'),
         cardTypeImgs = document.querySelectorAll('.card-type__img');
@@ -47,15 +45,35 @@ window.addEventListener('DOMContentLoaded', () => {
         {
             return "visa";
         }
-    };
+    }
 
     function setCardTypeImg(cardType = "visa")
     {
         cardTypeImgs.forEach(cardTypeImg => {
-            cardTypeImg.src = `img/cardTypes/${cardType}.png`;
-            cardTypeImg.alt = `${cardType}`;
+            switch(cardType) {
+                case "visa":
+                    cardTypeImg.src = 'https://firebasestorage.googleapis.com/v0/b/cardform-f357b.appspot.com/o/visa.png?alt=media&token=5a3bbe1a-dfdd-44a3-9427-56072ba2aa0b';
+                    break;
+                case "mastercard":
+                    cartTypeImg.src = 'https://firebasestorage.googleapis.com/v0/b/cardform-f357b.appspot.com/o/mastercard.png?alt=media&token=0bd9be02-92d0-419e-a5ad-69951f36abfd';
+                    break;
+                case "amex":
+                    cardTypeImg.src = 'https://firebasestorage.googleapis.com/v0/b/cardform-f357b.appspot.com/o/amex.png?alt=media&token=2eac4496-5173-42c2-9c1c-7a6d5df3023f';
+                    break;
+                case "discover":
+                    cartTypeImg.src = 'https://firebasestorage.googleapis.com/v0/b/cardform-f357b.appspot.com/o/discover.png?alt=media&token=f18f4d49-739b-462c-808e-6ba292351dfd';
+                    break;
+                case "troy":
+                    cartTypeImg.src = 'https://firebasestorage.googleapis.com/v0/b/cardform-f357b.appspot.com/o/troy.png?alt=media&token=b28b4ccd-c4e2-4bcd-b83b-e2914cb9e18c';
+                    break;
+                default:
+                    cardTypeImg.src = 'https://firebasestorage.googleapis.com/v0/b/cardform-f357b.appspot.com/o/visa.png?alt=media&token=5a3bbe1a-dfdd-44a3-9427-56072ba2aa0b';
+                    break;
+            }
+
+            cardTypeImg.alt = cardType;
         });
-    };
+    }
 
     let cardType = getCardType();
     setCardTypeImg(cardType);
@@ -80,7 +98,7 @@ window.addEventListener('DOMContentLoaded', () => {
         if (cardType === "amex")
         {
             numberLabel.forEach((sym, i) => {
-                if (i != 4 && i != 11 && i < 16) 
+                if (i !== 4 && i !== 11 && i < 16)
                 {
                     sym.classList.remove('number-item--active');
                     sym.textContent = '#';
@@ -95,7 +113,7 @@ window.addEventListener('DOMContentLoaded', () => {
         else
         {
             numberLabel.forEach((sym, i) => {
-                if (i != 4 && i != 9 && i != 14) 
+                if (i !== 4 && i !== 9 && i !== 14)
                 {
                     sym.classList.remove('number-item--active');
                     sym.textContent = '#';
@@ -125,7 +143,7 @@ window.addEventListener('DOMContentLoaded', () => {
         item.addEventListener('click', () => {
             cardYearOptions.forEach(elem => elem.removeAttribute('selected'));
             item.setAttribute('selected', 'selected');
-            if (item.value == '') yearLabel.textContent = 'YY';
+            if (item.value === '') yearLabel.textContent = 'YY';
             else yearLabel.textContent = item.value;
         });
     });
@@ -134,14 +152,14 @@ window.addEventListener('DOMContentLoaded', () => {
         item.addEventListener('click', () => {
             cardMonthOptions.forEach(elem => elem.removeAttribute('selected'));
             item.setAttribute('selected', 'selected');
-            if (item.value == '') monthLabel.textContent = 'MM';
+            if (item.value === '') monthLabel.textContent = 'MM';
             else monthLabel.textContent = item.value;
         });
     });
 
     cardName.addEventListener('input', () => {
         nameLabel.textContent = cardName.value;
-        if(cardName.value == '') nameLabel.textContent = 'FULL NAME'
+        if(cardName.value === '') nameLabel.textContent = 'FULL NAME'
     });
 
     CVV.addEventListener('focus', () => {

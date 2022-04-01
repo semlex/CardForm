@@ -2,7 +2,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const miniCss = require('mini-css-extract-plugin');
-const сopy = require('copy-webpack-plugin');
 const CssUrlRelativePlugin = require('css-url-relative-plugin');
 
 module.exports = {
@@ -32,13 +31,6 @@ module.exports = {
            'css-loader',
            'sass-loader'
         ]
-     },
-     {
-       test:/\.(png|jpg|gif|jpeg)?$/,
-       loader: 'file-loader',
-       options: {
-         name: 'img/[name].[ext]',
-       }
      }
     ]
   },
@@ -47,10 +39,6 @@ module.exports = {
       template: 'src/index.html',
       inject: 'body'
     }),
-    new сopy({
-      patterns: [
-        { from: path.join(__dirname, 'src/img'), to: path.join(__dirname, 'dist/img') }
-    ]}),
     new miniCss({
       filename: 'css/style.css'
    }),
